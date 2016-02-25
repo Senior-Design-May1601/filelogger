@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+    "strings"
 
 	"github.com/Senior-Design-May1601/projectmain/loggerplugin"
 )
@@ -13,7 +14,7 @@ type TextfilePlugin struct {
 }
 
 func (x *TextfilePlugin) Log(msg []byte, _ *int) error {
-	log.Println(string(msg))
+	log.Println(strings.Trim(string(msg), "\n"))
 	return nil
 }
 
